@@ -1,0 +1,47 @@
+{
+  "name": "smart-parking-system",
+  "version": "1.0.0",
+  "description": "A modern parking slot availability and payment system with real-time updates",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server . -p 3000 -o",
+    "dev": "npx live-server --port=3001 --open=/",
+    "serve": "python3 -m http.server 8000",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "echo \"No linting configured\"",
+    "build": "echo \"No build process required for vanilla JS project\""
+  },
+  "keywords": [
+    "parking",
+    "payment",
+    "real-time",
+    "javascript",
+    "html",
+    "css",
+    "api",
+    "booking",
+    "smart-city"
+  ],
+  "author": "Smart Parking Solutions",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/smart-parking-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/smart-parking-system/issues"
+  },
+  "homepage": "https://github.com/your-username/smart-parking-system#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
