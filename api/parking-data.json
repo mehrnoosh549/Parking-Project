@@ -1,0 +1,190 @@
+{
+  "parking": {
+    "lots": [
+      {
+        "id": "lot-1",
+        "name": "Main Parking Lot",
+        "location": {
+          "address": "123 Main Street, Downtown",
+          "coordinates": {
+            "lat": 40.7128,
+            "lng": -74.0060
+          }
+        },
+        "totalSlots": 50,
+        "availableSlots": 18,
+        "occupiedSlots": 32,
+        "rates": {
+          "hourly": 5.00,
+          "daily": 25.00,
+          "monthly": 150.00,
+          "currency": "USD"
+        },
+        "amenities": [
+          "24/7 Security",
+          "Covered Parking",
+          "EV Charging Stations",
+          "Valet Service"
+        ],
+        "slots": [
+          {
+            "id": "A01",
+            "status": "available",
+            "type": "regular",
+            "vehicleNumber": null,
+            "startTime": null,
+            "duration": null,
+            "features": []
+          },
+          {
+            "id": "A02",
+            "status": "occupied",
+            "type": "regular",
+            "vehicleNumber": "ABC-1234",
+            "startTime": "2024-01-15T08:30:00Z",
+            "duration": 4,
+            "features": []
+          },
+          {
+            "id": "A03",
+            "status": "available",
+            "type": "compact",
+            "vehicleNumber": null,
+            "startTime": null,
+            "duration": null,
+            "features": ["compact"]
+          },
+          {
+            "id": "A04",
+            "status": "occupied",
+            "type": "regular",
+            "vehicleNumber": "XYZ-5678",
+            "startTime": "2024-01-15T09:15:00Z",
+            "duration": 2,
+            "features": []
+          },
+          {
+            "id": "A05",
+            "status": "available",
+            "type": "ev-charging",
+            "vehicleNumber": null,
+            "startTime": null,
+            "duration": null,
+            "features": ["ev-charging"]
+          }
+        ]
+      }
+    ],
+    "pricing": {
+      "baseRates": {
+        "regular": 5.00,
+        "compact": 4.00,
+        "ev-charging": 6.00,
+        "handicap": 5.00
+      },
+      "discounts": {
+        "earlyBird": {
+          "description": "Park before 9 AM",
+          "discount": 0.15,
+          "conditions": {
+            "startTimeBefore": "09:00"
+          }
+        },
+        "longTerm": {
+          "description": "Park for more than 8 hours",
+          "discount": 0.20,
+          "conditions": {
+            "durationMoreThan": 8
+          }
+        },
+        "weekend": {
+          "description": "Weekend parking",
+          "discount": 0.10,
+          "conditions": {
+            "weekendOnly": true
+          }
+        }
+      }
+    },
+    "paymentMethods": [
+      {
+        "type": "credit_card",
+        "name": "Credit Card",
+        "supported": ["visa", "mastercard", "amex", "discover"],
+        "processingFee": 0.029
+      },
+      {
+        "type": "digital_wallet",
+        "name": "Digital Wallet",
+        "supported": ["apple_pay", "google_pay", "samsung_pay"],
+        "processingFee": 0.025
+      },
+      {
+        "type": "mobile_app",
+        "name": "Mobile App Payment",
+        "supported": ["app_wallet", "stored_cards"],
+        "processingFee": 0.020
+      }
+    ],
+    "realTimeUpdates": {
+      "updateInterval": 30,
+      "lastUpdated": "2024-01-15T10:30:00Z",
+      "dataVersion": "1.2.3",
+      "status": "operational"
+    },
+    "notifications": [
+      {
+        "id": "notif-001",
+        "type": "info",
+        "message": "New EV charging stations now available!",
+        "priority": "low",
+        "expires": "2024-02-15T00:00:00Z"
+      },
+      {
+        "id": "notif-002",
+        "type": "warning",
+        "message": "Maintenance scheduled for slots B10-B15 tomorrow 2-4 PM",
+        "priority": "medium",
+        "expires": "2024-01-16T16:00:00Z"
+      }
+    ],
+    "analytics": {
+      "occupancyRate": {
+        "current": 0.64,
+        "average24h": 0.58,
+        "peak": {
+          "time": "14:30",
+          "rate": 0.89
+        },
+        "low": {
+          "time": "03:15",
+          "rate": 0.12
+        }
+      },
+      "revenue": {
+        "today": 1250.75,
+        "thisWeek": 8945.50,
+        "thisMonth": 34567.25
+      },
+      "popularSlots": [
+        {"slotId": "A01", "bookingCount": 45},
+        {"slotId": "A15", "bookingCount": 42},
+        {"slotId": "B05", "bookingCount": 38}
+      ]
+    }
+  },
+  "apiInfo": {
+    "version": "1.0.0",
+    "endpoints": {
+      "status": "/api/parking/status",
+      "book": "/api/parking/book",
+      "payment": "/api/payment/process",
+      "history": "/api/user/history"
+    },
+    "rateLimit": {
+      "requests": 100,
+      "window": "15min"
+    },
+    "documentation": "https://api.smartparking.com/docs"
+  }
+}
